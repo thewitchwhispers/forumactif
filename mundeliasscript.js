@@ -1,15 +1,11 @@
 window.onload = function() {
-    setTimeout(function() {
-        // Sélectionner le lien avec l'ID 'fa_welcome'
-        const welcomeLink = document.querySelector('a#fa_welcome');
-        
-        // Vérifier si le lien contient le texte "William Yaxley"
-        if (welcomeLink && welcomeLink.textContent.includes('William Yaxley')) {
-            // Si le texte est trouvé, rendre visible la div .mundelias
-            const mundeliasDiv = document.querySelector('.mundelias');
-            if (mundeliasDiv) {
-                mundeliasDiv.style.display = 'block'; // Rendre la div visible
-            }
+    // Vérifie si l'image avec alt="William Yaxley" existe
+    const image = document.querySelector('img[alt="William Yaxley"]');
+    // Si l'image existe, rendre la div .mundelias visible
+    if (image) {
+        const mundeliasDiv = document.querySelector('.mundelias');
+        if (mundeliasDiv) {
+            mundeliasDiv.style.display = 'block'; // Ou 'visible' selon ce que tu veux
         }
-    }, 5000);  // Attendre 5 secondes (augmenter le délai si nécessaire)
+    }
 };
